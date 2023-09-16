@@ -3,13 +3,12 @@
 import React from "react";
 import { useMemo } from "react";
 import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
+import { GlobalVariables } from "../App";
 
 export default function Home() {
-  
-
   const {isLoaded} = useLoadScript({
-    googleMapsApiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,
+    googleMapsApiKey: "AIzaSyB0O1XNs5m_YOaBI-yniNxOTjL1NKGk0zg",
   });
   
   if (!isLoaded) return <div>Loading...</div>;
@@ -19,8 +18,10 @@ export default function Home() {
 
 function Map() {
   const [activeMarker, setActiveMarker] = useState(false);
+  const { longitude, setLongitude, latitude, setLatitude} = useContext(GlobalVariables);
+
   useEffect(() => {
     setActiveMarker((prev) => true)
     })
-  return <GoogleMap zoom={10} center={{lat: 44, lng: -80}} ><div className="h-screen">{activeMarker && (<Marker position={{lat:44, lng: -80}}/>)}</div></GoogleMap>
+  return <GoogleMap zoom={10} center={{lat: latitude, lng: longitude}} ><div className="h-screen">{activeMarker && (<Marker position={{lat:latitude, lng: longitude}}/>)}</div></GoogleMap>
 }
