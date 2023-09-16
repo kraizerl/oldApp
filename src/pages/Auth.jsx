@@ -6,6 +6,7 @@ import {
   signOut,
 } from "firebase/auth";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Auth = () => {
   const [email, setEmail] = useState("");
@@ -41,22 +42,30 @@ const Auth = () => {
   };
 
   return (
-    <div>
-      <input
-        type="text"
-        placeholder="Enter Email"
-        // NOTE: this is how you assign the contents of an input into a variable
-        onChange={(e) => setEmail(e.target.value)}
-      />
-      <input
-        type="password"
-        placeholder="Enter Password"
-        // NOTE: this is how you assign the contents of an input into a variable
-        onChange={(e) => setPassword(e.target.value)}
-      />
-      <button onClick={SignIn}>Sign In</button>
-      <button onClick={SignInWithGoogle}>Sign In With Google</button>
-      <button onClick={SignOut}>Sign Out</button>
+    <div className="h-screen flex flex-col items-center bg-offwhite">
+      <div className="drop-shadow-lg w-full h-1/6">
+        <h1 className="text-4xl">Welcome to The Network</h1>
+      </div>
+      <div className="m-10 flex flex-col items-center justify-center gap-5 border-4 border-red-500 rounded-lg p-20">
+        <h2>Sign In</h2>
+        <input
+          type="text"
+          placeholder="Enter Email"
+          // NOTE: this is how you assign the contents of an input into a variable
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <input
+          type="password"
+          placeholder="Enter Password"
+          // NOTE: this is how you assign the contents of an input into a variable
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        <Link onClick={SignIn} to="/preferences">
+          Enter
+        </Link>
+        <button onClick={SignInWithGoogle}>Sign In With Google</button>
+        <button onClick={SignOut}>Sign Out</button>
+      </div>
     </div>
   );
 };

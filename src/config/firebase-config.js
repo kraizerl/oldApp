@@ -15,19 +15,19 @@ import { getFirestore } from "firebase/firestore";
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 
 const firebaseConfig = {
-  apiKey: "AIzaSyB0YspHI7wjEUL57Jfrbekz41i1yGM7xEY",
+  apiKey: "AIzaSyCGtYKA3Kp5KLomnrh2Sjw0fKL181MOhVs",
 
-  authDomain: "databasesocialbond.firebaseapp.com",
+  authDomain: "socialbond-f91d5.firebaseapp.com",
 
-  projectId: "databasesocialbond",
+  projectId: "socialbond-f91d5",
 
-  storageBucket: "databasesocialbond.appspot.com",
+  storageBucket: "socialbond-f91d5.appspot.com",
 
-  messagingSenderId: "75471513791",
+  messagingSenderId: "803426290051",
 
-  appId: "1:75471513791:web:b738e06da5fd0e69557e0a",
+  appId: "1:803426290051:web:7e8d8bfc05392498838eb6",
 
-  measurementId: "G-MNJJ485ZHG",
+  measurementId: "G-7VNYXCJ8CC",
 };
 
 // Initialize Firebase
