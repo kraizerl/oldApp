@@ -26,7 +26,7 @@ function App() {
     function error() {
       console.log("Unable to retrieve your location");
     }
-  }, 5000)
+  }, [])
 
   return (
     <div className="App">
