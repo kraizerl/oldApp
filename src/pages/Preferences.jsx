@@ -107,7 +107,7 @@ const Preferences = () => {
         </div>
         <Link
           onClick={OnSubmitUser}
-          to="/map"
+          to="/main"
           className="bg-turq rounded-lg text-offwhite hover:bg-offwhite hover:border-2 hover:border-turq hover:text-turq p-4"
         >
           Submit User Information
