@@ -8,7 +8,7 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Auth />} />
+          <Route path="/" element={<Auth />} className="h-full" />
           <Route path="/preferences" element={<Preferences />} />
           <Route path="/map" element={<Map />} />
         </Routes>

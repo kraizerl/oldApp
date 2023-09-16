@@ -41,7 +41,7 @@ const Auth = () => {
   };
 
   return (
-    <div>
+    <div className="">
       <input
         type="text"
         placeholder="Enter Email"
