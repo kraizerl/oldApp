@@ -11,6 +11,7 @@ module.exports = {
         light: "#E0FBFC",
         offwhite: "#F5FBFC",
         white: "#FFFFF",
+        turq: "#13D9C8",
       },
     },
   },

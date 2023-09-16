@@ -6,20 +6,33 @@ import {
   signOut,
 } from "firebase/auth";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom"; //to check for invalid logins
 
 const Auth = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   //   this is the function that is called when signing in
   //   it sets the username and password equal to the sign-in
   //   NOTE: this might be helpful for setting other variables equal to each other
   const SignIn = async () => {
+    const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+    if (!emailPattern.test(email)) {
+      alert("Please enter a valid email address.");
+      return;
+    }
+    if (password.length < 6) {
+      alert("Password should be 6 characters");
+      return;
+    }
     try {
       await createUserWithEmailAndPassword(auth, email, password);
+      // Navigate to the next page ONLY if authentication is successful
+      navigate("/preferences");
     } catch (err) {
       console.log(err);
+      alert(err.message);
     }
   };
 
@@ -27,6 +40,7 @@ const Auth = () => {
   const SignInWithGoogle = async () => {
     try {
       await signInWithPopup(auth, googleProvider);
+      navigate("/preferences");
     } catch (err) {
       console.log(err);
     }
@@ -60,9 +74,7 @@ const Auth = () => {
           // NOTE: this is how you assign the contents of an input into a variable
           onChange={(e) => setPassword(e.target.value)}
         />
-        <Link onClick={SignIn} to="/preferences">
-          Enter
-        </Link>
+        <button onClick={SignIn}>Enter</button>
         <button onClick={SignInWithGoogle}>Sign In With Google</button>
         <button onClick={SignOut}>Sign Out</button>
       </div>
