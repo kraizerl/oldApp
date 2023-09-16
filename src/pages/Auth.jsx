@@ -42,8 +42,10 @@ const Auth = () => {
   };
 
   return (
-    <div className="h-screen flex flex-col justify-center items-center bg-gray-800">
-      <h1 className="text-4xl">Welcome to The Network</h1>
+    <div className="h-screen flex flex-col items-center bg-offwhite">
+      <div className="drop-shadow-lg w-full h-1/6">
+        <h1 className="text-4xl">Welcome to The Network</h1>
+      </div>
       <div className="m-10 flex flex-col items-center justify-center gap-5 border-4 border-red-500 rounded-lg p-20">
         <h2>Sign In</h2>
         <input

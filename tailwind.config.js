@@ -5,6 +5,12 @@ module.exports = {
     extend: {
       colors: {
         gunmetal: "#253237",
+        gray: "#5C6B73",
+        cadet: "#9DB4C0",
+        baby: "#C2DFE3",
+        light: "#E0FBFC",
+        offwhite: "#F5FBFC",
+        white: "#FFFFF",
       },
     },
   },
